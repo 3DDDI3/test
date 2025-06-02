@@ -59,7 +59,8 @@ docker-comose exec -it supervisor supervisorctl start all
 > Команда запустит Laravel Reverb и Laravel Pulse (можно посмотреть работу Reverb'a, а также можно посмотреть логи в файле **storage/logs/supervisor_output.log**).
 > Laravel Pulse доступен по адресу [**localhost/pulse**](http://localhost/pulse)
 
-> [!IMPORTANT] Посмотреть сами сообещния можно на главной странице [**localhost**](http://localhost:80) (файл **welcome.blade.php**)
+> [!IMPORTANT]
+> Посмотреть сами сообещния можно на главной странице [**localhost**](http://localhost:80) (файл **welcome.blade.php**)
 
 Прослушивание события исполнителем с id 2 заказа с id 1:
 
@@ -82,5 +83,6 @@ Echo.private(`order.1.worker.2.notification`).listen(
 ```console
 docker-compose exec -it php php artisan test
 ```
+
 Результаты работы тестов:
 ![Тесты](/assets/images/test.png)
