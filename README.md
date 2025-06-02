@@ -28,14 +28,6 @@ exit;
 > Логин: **laravel** <br>
 > Пароль **laravel**
 
-## Изменение прав доступа
-
-```console
-docker-compose exec -it php chmod -R 777 .
-docker-compse exec -it php chmod 660 storage/oauth-private.key
-docker-compse exec -it php chmod 660 storage/oauth-public.key
-```
-
 ## Запуск сидеров:
 
 ```console
@@ -44,6 +36,14 @@ docker-compose run --rm artisan app:run-seeders
 
 > [!NOTE]
 > В корне лежит дамп базы на всякий случай
+
+## Изменение прав доступа
+
+```console
+docker-compose exec -it php chmod -R 777 .
+docker-compse exec -it php chmod 660 storage/oauth-private.key
+docker-compse exec -it php chmod 660 storage/oauth-public.key
+```
 
 # Документацация эндпоинтов
 
