@@ -2,20 +2,16 @@
 
 namespace Tests\Feature;
 
-use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class OrderTest extends TestCase
+class WorkerTest extends TestCase
 {
-
     /**
-     * Тестирвоание прикрепления исполнителя к заказу
-     *
-     * @return void
+     * A basic feature test example.
      */
-    public function order_worker_attach_test(): void
+    public function test_example(): void
     {
         $user = User::factory()->create();
 
@@ -37,11 +33,4 @@ class OrderTest extends TestCase
                 'updated_at'
             ]]);
     }
-
-    /**
-     * Обновление статуса заказа
-     *
-     * @return void
-     */
-    public function order_status_update_test() {}
 }
