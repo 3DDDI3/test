@@ -4,17 +4,17 @@
 
 Запуск `docker-compsose.yml` необходимо осуществлять в терминале в папке с проектом:
 
-```bash
+```console
 docker-compose up -d
 ```
 
 ## Усановка зависимостей composer
-```bash
+```console
 docker-compose run --rm composer install
 ```
 
 ## Настройка MySql
-```bash
+```console
 docker-compose exec -it mysql mysql -u root -p'root'
 grant all privileges on *.* to 'laravel'@'%';
 flush privileges;
@@ -28,14 +28,14 @@ exit;
 > Пароль **laravel**
 
 ## Изменение прав доступа
-```bash
+```console
 docker-compose exec -it php chmod -R 777 .
-docker-compse exce -it php chmod 660 storage/oauth-private.key
-docker-compse exce -it php chmod 660 storage/oauth-public.key
+docker-compse exec -it php chmod 660 storage/oauth-private.key
+docker-compse exec -it php chmod 660 storage/oauth-public.key
 ```
 
 ## Запуск сидеров:
-```bash
+```console
 docker-compose run --rm artisan app:run-seeders
 ```
 
