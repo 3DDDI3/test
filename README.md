@@ -11,7 +11,7 @@ docker-compose up -d
 > [!IMPORTANT]
 > Переименовать .env.example в .env
 
-## Усановка зависимостей composer
+## Установка зависимостей composer
 
 ```console
 docker-compose run --rm composer install
@@ -27,7 +27,8 @@ create database test character set utf8 collate utf8_general_ci;
 exit;
 ```
 
-> **Адрес к phpmyadmin:** [**localhost**](http://localhost:81) <br> > **Доступ к phpmyadmin:** <br>
+> **Адрес к phpmyadmin:** [**localhost**](http://localhost:81) <br> 
+> **Доступ к phpmyadmin:** <br>
 > Логин: **laravel** <br>
 > Пароль **laravel**
 
