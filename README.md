@@ -8,6 +8,9 @@
 docker-compose up -d
 ```
 
+> [!IMPORTANT]
+> Переименовать .env.example в .env
+
 ## Усановка зависимостей composer
 
 ```console
@@ -28,6 +31,36 @@ exit;
 > Логин: **laravel** <br>
 > Пароль **laravel**
 
+## Изменение прав доступа
+
+```console
+docker-compose exec -it php chmod -R 777 .
+```
+
+## Запуск мигараций:
+
+```console
+docker-compose run --rm artisan migrage
+```
+
+## Создание ключенй для Laravel Passport
+
+```console
+docker-compose exec -it php php artisan passport:keys
+```
+
+## Смена пользователя папки storage
+
+```console
+docker-compose exec -it php chown www-data:www-data -R storage
+```
+
+## Создание клиента для Laravel Passport
+
+```console
+docker-compose exec php php artisan passport:client --personal
+```
+
 ## Запуск сидеров:
 
 ```console
@@ -37,22 +70,19 @@ docker-compose run --rm artisan app:run-seeders
 > [!NOTE]
 > В корне лежит дамп базы на всякий случай
 
-## Изменение прав доступа
-
-```console
-docker-compose exec -it php chmod -R 777 .
-docker-compse exec -it php chmod 660 storage/oauth-private.key
-docker-compse exec -it php chmod 660 storage/oauth-public.key
-```
-
 # Документацация эндпоинтов
 
 Документация эндпроинтов находистя по адресу: [**localhost/api/docs**](http://localhost/api/docs)
 
+## Устанвока зависииостей Nodejs
+
+docker-compose run --rm nodejs npm install
+docker-compose restart nodejs
+
 ## Запуск Laravel Reverb
 
 ```console
-docker-comose exec -it supervisor supervisorctl start all
+docker-compose exec -it supervisor supervisorctl start all
 ```
 
 > [!NOTE]
